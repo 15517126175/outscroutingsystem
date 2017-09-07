@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-7-22 11:21:48 by Hibernate Tools 3.4.0.CR1 
+发包方信息表
+-->
+<hibernate-mapping>
+    <class name="com.zzti.outsourcing.entities.Forum" table="OUTSOURCING_FORUM">
+        <id name="forum_id" type="java.lang.Integer">
+            <column name="forum_id" />
+            <generator class="native" />
+        </id>
+        <property name="forum_title" type="java.lang.String">
+            <column name="forum_title" />
+        </property>
+        <property name="forum_content" type="java.lang.String">
+            <column name="forum_content" />
+        </property>
+        <property name="forum_peopleid" type="java.lang.Integer">
+            <column name="forum_peopleid" />
+        </property>
+        <property name="forum_peoname" type="java.lang.String">
+            <column name="forum_peoname" />
+        </property>
+        <property name="forum_puttime" type="java.util.Date">
+            <column name="forum_puttime" />
+        </property>
+      
+        <property name="forum_clinknum" type="java.lang.Integer">
+            <column name="forum_clinknum" />
+        </property>
+        <property name="forum_replynum" type="java.lang.Integer">
+            <column name="forum_replynum" />
+        </property>
+        <property name="forum_name" type="java.lang.String">
+            <column name="forum_name" />
+        </property>
+         <property name="forum_newtime" type="java.util.Date">
+            <column name="forum_newtime" />
+        </property>
+    </class>
+</hibernate-mapping>

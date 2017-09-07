@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.zzti.outsourcing.entities.TrainEmp" table="OUTSOURCING_TRAINEMP">
+    <id name="id" type="java.lang.Integer">
+            <column name="ID"/>
+            <generator class="native"/>
+    </id>
+    <property name="train_id" type="java.lang.Integer">
+            <column name="TRAIN_ID"/>
+    </property>
+    <property name="employee_id" type="java.lang.Integer">
+            <column name="EMPLOYEE_ID"/>
+    </property>
+    <property name="feed_train" type="java.lang.String">
+            <column name="FEED_TRAIN"/>
+    </property>
+    <property name="feed_trainer" type="java.lang.String">
+            <column name="FEED_TRAINER"/>
+    </property>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!--外派管理员业务层  -->
+	<bean id = "outManagerDao" class="com.zzti.outsourcing.dao.OutManagerDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id = "outManagerSv" class="com.zzti.outsourcing.service.OutManagerSV">
+		<property name="outManagerDao" ref="outManagerDao"></property>
+	</bean>
+	<bean id="outManagerAction" class="com.zzti.outsourcing.action.OutManagerAction"
+		scope="prototype">
+		<property name="outManagerSv" ref="outManagerSv"></property>
+		<property name="publicSv" ref="publicSv"></property>
+	</bean>
+	<!--管理员业务层  -->
+	<bean id = "managerDao" class="com.zzti.outsourcing.dao.ManagerDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id = "managerSv" class="com.zzti.outsourcing.service.ManagerSV">
+		<property name="managerDao" ref="managerDao"></property>
+	</bean>
+	<bean id="managerAction" class="com.zzti.outsourcing.action.ManagerAction"
+		scope="prototype">
+		<property name="managerSv" ref="managerSv"></property>
+		<property name="publicSv" ref="publicSv"></property>
+	</bean>
+	
+	
+	
+	
+	<!--员工层 -->
+	<bean id = "employeedao" class="com.zzti.outsourcing.dao.EmployeeDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id = "employeesv" class="com.zzti.outsourcing.service.EmployeeSV">
+		<property name="employeedao" ref="employeedao"></property>
+	</bean>
+	<bean id="employeeAction" class="com.zzti.outsourcing.action.EmployeeAction"
+		scope="prototype">
+		<property name="employeesv" ref="employeesv"></property>
+		<property name="publicSv" ref="publicSv"></property>
+	</bean>
+	<!--员工层 -->
+	
+	<!-- 其他 -->
+	<bean id = "publicDao" class="com.zzti.outsourcing.dao.PublicDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id = "publicSv" class="com.zzti.outsourcing.service.PublicSV">
+		<property name="publicDao" ref="publicDao"></property>
+	</bean>
+	<bean id="publicAction" class="com.zzti.outsourcing.action.PublicAction" scope="prototype">
+		<property name="publicSv" ref="publicSv"></property>
+	</bean>
+</beans>

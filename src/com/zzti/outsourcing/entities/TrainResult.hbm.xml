@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.zzti.outsourcing.entities.TrainResult" table="OUTSOURCING_TRAINRESULT">
+    <id name="id" type="java.lang.Integer">
+            <column name="ID"/>
+            <generator class="native"/>
+    </id>
+    <property name="train_proId" type="java.lang.Integer">
+            <column name="TRAIN_PROID"/>
+    </property>
+    <property name="train_id" type="java.lang.Integer">
+            <column name="TRAIN_ID"/>
+    </property>
+    <property name="train_title" type="java.lang.String">
+            <column name="TRAIN_TITLE"/>
+    </property>
+    <property name="train_content" type="java.lang.String">
+            <column name="TRAIN_CONTENT"/>
+    </property>
+    <property name="train_time" type="java.util.Date">
+            <column name="TRAIN_TIME"/>
+    </property>
+    <property name="train_trainer" type="java.lang.String">
+            <column name="TRAIN_TRAINER"/>
+    </property>
+    <property name="train_place" type="java.lang.String">
+            <column name="TRAIN_PLACE"/>
+    </property>
+    <property name="train_days" type="java.lang.Integer">
+            <column name="TRAIN_DAYS"/>
+    </property>
+  </class>
+</hibernate-mapping>

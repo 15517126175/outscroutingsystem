@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-7-22 11:21:48 by Hibernate Tools 3.4.0.CR1 
+管理员信息表
+-->
+<hibernate-mapping>
+    <class name="com.zzti.outsourcing.entities.OutManager" table="OUTSOURCING_OUTMANAGER">
+        
+        <id name="manager_id" type="java.lang.Integer">
+            <column name="MANAGER_ID" />
+            <generator class="native" />
+        </id>
+        
+        <property name="manager_name"  type="java.lang.String">
+            <column name="MANAGER_NAME" />
+        </property>
+      
+        
+        <property name="password" type="java.lang.String">
+            <column name="PASSWORD" />
+        </property>
+        
+    </class>
+</hibernate-mapping>

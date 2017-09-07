@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="OutSourcingSystem"
+  id="myeclipse.1481614453287"
+  context-root="/OutSourcingSystem"
+  j2ee-spec="5.0"
+  archive="OutSourcingSystem.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

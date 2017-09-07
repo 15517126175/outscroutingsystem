@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-7-22 11:21:48 by Hibernate Tools 3.4.0.CR1 
+外派项目合同表
+-->
+<hibernate-mapping>
+    <class name="com.zzti.outsourcing.entities.OutProject" table="OUTSOURCING_OUTPROJECT">
+        
+        <id name="project_id" type="java.lang.Integer">
+            <column name="PROJECT_ID" />
+            <generator class="assigned" />
+        </id>
+        
+        <property name="project_name"  type="java.lang.String">
+            <column name="PROJECT_NAME" />
+        </property>
+      
+        <property name="proiect_type" type="java.lang.String">
+            <column name="PROJECT_TYPE" />
+        </property>
+        <property name="boss_name" type="java.lang.String">
+            <column name="BOSS_NAME" />
+        </property>
+        <property name="city" type="java.lang.String">
+            <column name="CITY" />
+        </property>
+       
+        <property name="enter_time" type="java.util.Date">
+            <column name="ENTER_TIME" />
+        </property>
+         <property name="star_time" type="java.util.Date">
+            <column name="STAR_TIME" />
+        </property>
+         <property name="end_time" type="java.util.Date">
+            <column name="END_TIME" />
+        </property>
+        <property name="woker_time"  type="java.lang.Integer">
+            <column name="WOKER_TIME" />
+        </property>
+        
+        <property name="boss_contract" type="java.lang.String">
+            <column name="BOSS_CONTRACT" />
+        </property>
+         <property name="employee_contract" type="java.lang.String">
+            <column name="EMPLOYEE_CONTRACT" />
+        </property>
+        <property name="project_flage"  type="java.lang.Integer">
+            <column name="PROJECT_FLAGE" />
+        </property>
+        
+    </class>
+</hibernate-mapping>

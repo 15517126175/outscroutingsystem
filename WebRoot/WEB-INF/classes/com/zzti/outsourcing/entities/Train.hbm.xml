@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.zzti.outsourcing.entities.Train" table="OUTSOURCING_TRAIN">
+    <id name="train_id" type="java.lang.Integer">
+            <column name="TRAIN_ID"/>
+            <generator class="native"/>
+    </id>
+    <property name="train_title" type="java.lang.String">
+            <column name="TRAIN_TITLE"/>
+    </property>
+    <property name="train_content" type="java.lang.String">
+            <column name="TRAIN_CONTENT"/>
+    </property>
+    <property name="train_time" type="java.util.Date">
+            <column name="TRAIN_TIME"/>
+    </property>
+     <property name="end_time" type="java.util.Date">
+            <column name="END_TIME"/>
+    </property>
+    <property name="train_days" type="java.lang.Integer">
+            <column name="TRAIN_DAYS"/>
+    </property>
+    <property name="train_trainer" type="java.lang.String">
+            <column name="TRAIN_TRAINER"/>
+    </property>
+    <property name="train_place" type="java.lang.String">
+            <column name="TRAIN_PLACE"/>
+    </property>
+    <property name="status" type="java.lang.Integer">
+            <column name="STATUS"/>
+    </property>
+    <property name="train_puttime" type="java.util.Date">
+            <column name="train_puttime"/>
+            </property>
+  </class>
+</hibernate-mapping>

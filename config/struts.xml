@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<constant name="struts.locale" value="zh_CN"></constant>
+	<constant name="struts.i18n.encoding" value="utf-8"></constant>
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.devMode" value="true" />
+    <package name="inter" extends="struts-default,json-default">
+	<interceptors>
+		<interceptor name="logininterceptor" class="interceptors.LoginInterceptor"></interceptor>
+		<interceptor-stack name="loginStack">
+		<interceptor-ref name="logininterceptor"></interceptor-ref>
+		<interceptor-ref name="defaultStack"></interceptor-ref> 
+		</interceptor-stack>
+	
+     </interceptors>
+ 
+	</package>
+	<package name="default" namespace="/"  extends="inter">
+	<!-- class要与bean的id保持一致 -->
+	<result-types> 
+    <result-type name="streamx" class="cc.fozone.struts2.StreamResultX"/> 
+    </result-types>  
+    	<action name="statistics" class="statistics">
+    		<result name="success">/statistical.jsp</result>
+    	</action>
+		<action name="outlogin-*" class="outManagerAction" method="{1}">
+			<result name="login" >/outmanager/managerHome.jsp</result>
+		</action>
+		<action name="chart" class="charts" method="charts">
+			
+		</action> 
+		<action name="outmanager-*" class="outManagerAction" method="{1}" 
+			>
+			
+			<result name="bossList">/outmanager/bossList.jsp</result>
+			
+			<result name="deleteboss" type="redirect">outmanager-bossList</result>
+			<result name="deleteAll" type="redirect">outmanager-bossList</result>
+			<result name="toEditBoss">/outmanager/editBoss.jsp</result>
+			<result name="editBoss" type="redirect">outmanager-bossList</result>
+			<result name="outproject">/outmanager/outProjectQuery.jsp</result>
+			<result name="toEditProject">/outmanager/editProject.jsp</result>
+			<result name="editpro">/outmanager/outProjectQuery.jsp</result>
+			<result name="success" type="stream">
+                                <param name="contentType">application/octet-stream</param>
+                                
+                                <param name="contentDisposition">attachment;fileName="${fileName}"</param>
+                               <param name="inputName">inputStream</param>
+     							<param name="bufferSize">4096</param>
+           </result>
+			<result name="agin" type="redirect">/outmanager/login.jsp</result>
+			<result name="outemplist">/outmanager/outEmpList.jsp</result>
+			<result name="sendlist">/outmanager/sendList.jsp</result>
+			<result name="sendprolist">/outmanager/sendEmp.jsp</result>
+			<result name="toupoutemp">/outmanager/upOutEmp.jsp</result>
+			<result name="upoutemp" type="redirect">outmanager-outEmpList</result>
+			<result name="outempquery">/outmanager/outEmpList.jsp</result>
+			<result name="salarymanage">/outmanager/SalaryManage.jsp</result>
+			<result name="checkworklist">/outmanager/checkWorkList.jsp</result>
+			<result name="sendlist">/outmanager/send.jsp</result>
+			<result name="firstpage">/outmanager/managerHome.jsp</result>
+			<result name="outnotice">/outmanager/outNotice.jsp</result>
+	        <interceptor-ref name="loginStack" />    
+			</action>
+			<!-- 员工端 -->
+			<action name="employeelogin-*" class="employeeAction" method="{1}">
+			<result name="login" >/employee/employeeHome.jsp</result>
+			</action>
+            <action name="employee-*" class="employeeAction" method="{1}">
+			<result name="agin" type="redirect">/employee/employee_login.jsp</result>
+			<result name="loginout">/employee/employee_login.jsp</result>
+            <result name="selectInfo">/employee/update_info.jsp</result>
+            <result name="toEditInfo">/employee/update_info.jsp</result>
+            <result name="editInfo">/employee/employeeHome.jsp</result>
+            <result name="findResume">/employee/employee_resume.jsp</result>
+            <result name="toEditResume">/employee/update_resume.jsp</result>
+            <result name="editResume">/employee/employeeHome.jsp</result>
+            <result name="toAddResume">/employee/add_resume.jsp</result>
+            <result name="deleteResume">/employee/employeeHome.jsp</result>
+            <result name="downResume">/employee/downResume.jsp</result>
+            <result name="newmessage">/employee/receive_inform.jsp</result>
+            <result name="selectTask">/employee/MyProject.jsp</result>
+            <result name="viewInform">/employee/MyInform.jsp</result>
+            <result name="viewProject">/employee/viewProject.jsp</result>
+            <result name="viewTrain">/employee/MyStudy.jsp</result>
+            <result name="joinTrain">/employee/JoinTrain.jsp</result>
+            <result name="choseTitle">/employee/JoinTrain.jsp</result>
+            <result name="result">/employee/result.jsp</result>
+            <result name="viewSalary">/employee/BasicSalary.jsp</result>
+            <result name="checkWork">/employee/employee_signin.jsp</result>
+            <result name="lookTrain">/employee/TrainResult.jsp</result>
+            <result name="firstpage">/employee/employeeHome.jsp</result>
+            <result name="empnotice">/employee/empNotice.jsp</result>
+            <result name="toCloseTask">/employee/closeTask.jsp</result>
+            <result name="interview">/employee/interview.jsp</result>
+            <result name="addholiday">/employee/addHoliday.jsp</result>
+            <result name="findandcount">/employee/findandcount.jsp</result>
+            <result name="feedback">/employee/TrainingBack.jsp</result>
+            <result name="forumList">/employee/Forumlist.jsp</result>
+			<result name="addForum" type="redirect">/employee-forumList</result>
+			<result name="showReply">/employee/showReply.jsp</result>
+			<result name="manager-showReply" type="redirect">/employee-showReply</result>
+			<interceptor-ref name="loginStack" />
+			
+			
+			</action>	
+			<!-- 管理员 -->	
+			<action name="managerlogin-*" class="managerAction" method="{1}">
+			
+			<result name="mlogin" >/manager/managerHome.jsp</result>
+			</action>
+			<action name="manager-*" class="managerAction" method="{1}" 
+			>
+			<result name="agin" type="redirect">/manager/mlogin.jsp</result>
+			<result name="empList">/manager/EmpList.jsp</result>
+			<result name="deleteEmp" type="redirect">manager-empList</result>
+			<result name="toEditEmp">/manager/editEmp.jsp</result>			
+			<result name="editEmp" type="redirect" >manager-empList</result>
+			<result name="toaddemp" >manager/addemp.jsp</result>
+			<result name="selectEmp">/manager/selectEmp.jsp</result>
+			<result name="showEmp">/manager/ShowEmp.jsp</result>
+			
+			<result name="trainList">/manager/TrainingList.jsp</result>
+			<result name="TrainInform">/manager/TrainInform.jsp</result>
+			<result name="trainplanlist">/manager/Trainplanlist.jsp</result>
+			<result name="trainplane">/manager/Trainplan.jsp</result>
+			<result name="trainticklingList">/manager/TrainticklingList.jsp</result>
+			<result name="Traintickling">/manager/Traintickling.jsp</result>
+			
+			<result name="synopsis">/manager/Synopsis.jsp</result>
+			<result name="institutionList">/manager/InstitutionList.jsp</result>
+			<result name="selectInstitution">/manager/Institution.jsp</result>
+			
+			<result name="noticetList">/manager/NoticeList.jsp</result>
+			<result name="notice">/manager/Notice.jsp</result>
+			<result name="toupContent">/manager/ToupContent.jsp</result>
+			
+			<result name="resumeList">/manager/Resumelist.jsp</result>
+			<result name="selectResume">/manager/Resume.jsp</result>
+			
+			<result name="forumList">/manager/Forumlist.jsp</result>
+			<result name="addForum" type="redirect">/manager-forumList</result>
+			<result name="showReply">/manager/showReply.jsp</result>
+			<result name="manager-showReply" type="redirect">/manager-showReply</result>
+						
+			<result name="success" type="stream">
+                                <param name="contentType">application/octet-stream</param>
+                                
+                                <param name="contentDisposition">attachment;fileName="${fileName}"</param>
+                               <param name="inputName">inputStream</param>
+     							<param name="bufferSize">4096</param>
+           </result>
+           <interceptor-ref name="loginStack" />
+		</action>
+
+			<action name="public-*" class="publicAction" method="{1}">
+				<result name="agin" type="redirect">/outmanager/login.jsp</result>
+				<result name="messagelist">queryMessage.jsp</result>
+				<result name="manmessagelist">/manager/Message.jsp</result>
+				<interceptor-ref name="loginStack" /> 
+			</action>
+	</package>
+ </struts>

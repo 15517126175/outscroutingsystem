@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-3-01 11:21:48 by Hibernate Tools 3.4.0.CR1 
+
+-->
+<hibernate-mapping>
+    <class name="com.zzti.outsourcing.entities.CheckWork" table="OUTSOURCING_CHECKWORK">
+        <id name="employee_id" type="java.lang.Integer">
+            <column name="EMPLOYEE_ID" />
+            <generator class="native" />
+        </id>
+        <property name="employee_name" type="java.lang.String">
+            <column name="EMPLOYEE_NAME" />
+        </property>
+        <property name="project_name" type="java.lang.String">
+            <column name="PROJECT_NAME" />
+        </property>
+        <property name="woker_time" type="java.lang.Integer">
+            <column name="WORK_TIME" />
+        </property>
+        <property name="normal_time" type="java.lang.Integer">
+            <column name="NORMAL_TIME" />
+        </property>
+        <property name="holiday_time" type="java.lang.Integer">
+            <column name="HOLIDAY_TIME" />
+        </property>
+       
+    </class>
+</hibernate-mapping>

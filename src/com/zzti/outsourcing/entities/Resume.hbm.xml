@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.zzti.outsourcing.entities.Resume" table="OUTSOURCING_RESUME">
+    <id name="resume_id" type="java.lang.Integer">
+            <column name="RESUME_ID"/>
+            <generator class="native"/>
+    </id>
+    <property name="employee_id" type="java.lang.Integer">
+            <column name="EMPLOYEE_ID"/>
+    </property>
+    <property name="resume_name" type="java.lang.String">
+            <column name="RESUME_NAME"/>
+    </property>
+    <property name="resume_sex" type="java.lang.String">
+            <column name="RESUME_SEX"/>
+    </property>
+    <property name="resume_age" type="java.lang.Integer">
+            <column name="RESUME_AGE"/>
+    </property>
+    <property name="resume_phone" type="java.lang.Long">
+            <column name="RESUME_PHONE"/>
+    </property>
+    <property name="resume_email" type="java.lang.String">
+            <column name="RESUMEE_EMAIL"/>
+    </property>
+    <property name="resume_study" type="java.lang.String">
+            <column name="RESUME_STUDY"/>
+    </property>
+    <property name="resume_outhistory" type="java.lang.String">
+            <column name="RESUME_OUTHISTORY"/>
+    </property>
+    <property name="resume_assess" type="java.lang.String">
+            <column name="RESUME_ASSESS"/>
+    </property>
+    <property name="local_resume" type="java.lang.String">
+            <column name="LOCAL_RESUME"/>
+    </property>
+  </class>
+</hibernate-mapping>
+        

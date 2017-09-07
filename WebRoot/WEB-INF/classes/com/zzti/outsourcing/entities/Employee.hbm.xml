@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-3-01 11:21:48 by Hibernate Tools 3.4.0.CR1 
+
+-->
+<hibernate-mapping>
+    <class name="com.zzti.outsourcing.entities.Employee" table="OUTSOURCING_EMPLOYEE">
+        <id name="employee_id" type="java.lang.Integer">
+            <column name="EMPLOYEE_ID" />
+            <generator class="native" />
+        </id>
+        <property name="employee_name" type="java.lang.String">
+            <column name="EMPLOYEE_NAME" />
+        </property>
+        <property name="employee_sex" type="java.lang.String">
+            <column name="EMPLOYEE_SEX" />
+        </property>
+        <property name="employee_age" type="java.lang.Integer">
+            <column name="EMPLOYEE_AGE" />
+        </property>
+        <property name="employee_pwd" type="java.lang.String">
+            <column name="EMPLOYEE_PWD" />
+        </property>
+        <property name="employee_phone" type="java.lang.Long">
+            <column name="EMPLOYEE_PHONE" />
+        </property>
+        <property name="employee_email" type="java.lang.String">
+            <column name="EMPLOYEE_EMAIL" />
+        </property>
+        <property name="enter_time" type="java.util.Date">
+        	<column name="ENTER_TIME"></column>
+        </property>
+        <property name="basicSalary" type="java.lang.Double">
+            <column name="BASICALARY" />
+        </property>
+        <property name="work_status" type="java.lang.String">
+            <column name="WORK_STATUS" />
+        </property>
+        <property name="employee_isin" type="java.lang.Integer">
+            <column name="EMPLOYEE_ISIN" />
+        </property>
+        <property name="employee_address" type="java.lang.String">
+            <column name="EMPLOYEE_ADDRESS" />
+        </property>
+        <property name="employee_skill" type="java.lang.String">
+            <column name="EMPLOYEE_SKILL" />
+        </property>
+        <property name="education" type="java.lang.String">
+            <column name="EDUCATION" />
+        </property>
+        <property name="school" type="java.lang.String">
+            <column name="SCHOOL" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.zzti.outsourcing.entities.PublicResume" table="OUTSOURCING_PUBLICRESUME">
+    <id name="p_id" type="java.lang.Integer">
+            <column name="P_ID"/>
+            <generator class="native"/>
+    </id>
+    <property name="pr_id" type="java.lang.Integer">
+            <column name="PR_ID"/>    
+    </property>
+    <property name="pr_name" type="java.lang.String">
+            <column name="PR_NAME"/>
+    </property>
+    <property name="pr_sex" type="java.lang.String">
+            <column name="PR_SEX"/>
+    </property>
+    <property name="pr_age" type="java.lang.Integer">
+            <column name="PR_AGE"/>
+    </property>
+    <property name="pr_phone" type="java.lang.Long">
+            <column name="PR_PHONE"/>
+    </property>
+    <property name="pr_email" type="java.lang.String">
+            <column name="PR_EMAIL"/>
+    </property>
+    <property name="pr_study" type="java.lang.String">
+            <column name="PR_STUDY"/>
+    </property>
+    <property name="pr_outhistory" type="java.lang.String">
+            <column name="PR_OUTHISTORY"/>
+    </property>
+    <property name="pr_assess" type="java.lang.String">
+            <column name="PR_ASSESS"/>
+    </property>
+    <property name="project_name" type="java.lang.String">
+            <column name="PROJECT_NAME"/>
+    </property>
+    <property name="project_type" type="java.lang.String">
+            <column name="PROJECT_TYPE"/>
+    </property>
+    <property name="work_type" type="java.lang.String">
+            <column name="WORK_TYPE"/>
+    </property>
+    <property name="employee_skill" type="java.lang.String">
+            <column name="EMPLOYEE_SKILL" />
+    </property>
+    <property name="education" type="java.lang.String">
+            <column name="EDUCATION" />
+    </property>
+    <property name="school" type="java.lang.String">
+            <column name="SCHOOL" />
+    </property>
+  </class>
+</hibernate-mapping>
+        

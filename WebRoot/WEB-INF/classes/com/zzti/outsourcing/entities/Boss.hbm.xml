@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-7-22 11:21:48 by Hibernate Tools 3.4.0.CR1 
+发包方信息表
+-->
+<hibernate-mapping>
+    <class name="com.zzti.outsourcing.entities.Boss" table="OUTSOURCING_BOSS">
+        <id name="boss_id" type="java.lang.Integer">
+            <column name="BOSS_ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="boss_name" type="java.lang.String">
+            <column name="BOSS_NAME" />
+        </property>
+        <property name="linkman" type="java.lang.String">
+            <column name="LINKMAN" />
+        </property>
+      
+        <property name="phone_number" type="java.lang.String">
+            <column name="PHONE_NUMBER" />
+        </property>
+    </class>
+</hibernate-mapping>

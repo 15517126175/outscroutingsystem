@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-7-22 11:21:48 by Hibernate Tools 3.4.0.CR1 
+发包方信息表
+-->
+<hibernate-mapping>
+    <class name="com.zzti.outsourcing.entities.Synopsis" table="OUTSOURCING_SYNOPSIS">
+        <id name="synopsis_id" type="java.lang.Integer">
+            <column name="synopsis_id" />
+            <generator class="native" />
+        </id>
+        <property name="synopsis_title" type="java.lang.String">
+            <column name="synopsis_title" />
+        </property>
+        <property name="synopsis_content" type="java.lang.String">
+            <column name="synopsis_content" />
+        </property>
+      <property name="puttime" type="java.util.Date">
+            <column name="puttime" />
+        </property>
+       <property name="file_name" type="java.lang.String">
+            <column name="file_name" />
+        </property>
+    </class>
+</hibernate-mapping>

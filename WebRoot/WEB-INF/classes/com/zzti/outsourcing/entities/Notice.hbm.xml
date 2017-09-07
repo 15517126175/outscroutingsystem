@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-7-22 11:21:48 by Hibernate Tools 3.4.0.CR1 
+发包方信息表
+-->
+<hibernate-mapping>
+    <class name="com.zzti.outsourcing.entities.Notice" table="OUTSOURCING_NOTICE">
+        <id name="notice_id" type="java.lang.Integer">
+            <column name="notice_id" />
+            <generator class="native" />
+        </id>
+        <property name="title" type="java.lang.String">
+            <column name="title" />
+        </property>
+        <property name="content" type="java.lang.String">
+            <column name="content" />
+        </property>
+      <property name="puttime" type="java.util.Date">
+            <column name="puttime" />
+        </property>
+       <property name="file_name" type="java.lang.String">
+            <column name="file_name" />
+        </property>
+    </class>
+</hibernate-mapping>
